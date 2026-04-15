@@ -1,3 +1,9 @@
+# Changes to make it run on streamlit
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.moudles.pop('pysqlite3')
+
+
 import streamlit as st
 from supporting_functions import extract_video_id, get_transcript, generate_notes, get_important_topics, translate_transcript, create_chunks, create_vector_store, rag_answer
 
